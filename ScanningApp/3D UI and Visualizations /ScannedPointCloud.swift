@@ -87,6 +87,7 @@ class ScannedPointCloud: SCNNode, PointCloud {
     
     func update(with pointCloud: ARPointCloud) {
         self.currentFramePoints = pointCloud.points
+        SavedPoints.points = self.currentFramePoints   
     }
     
     func updateOnEveryFrame() {

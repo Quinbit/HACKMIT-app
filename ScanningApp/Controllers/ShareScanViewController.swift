@@ -8,9 +8,10 @@ Customized share sheet for exporting scanned AR reference objects.
 import UIKit
 
 class ShareScanViewController: UIActivityViewController {
-    
     init(sourceView: UIView, sharedObject: Any) {
         super.init(activityItems: [sharedObject], applicationActivities: nil)
+        
+        print(SavedPoints.points)
         
         // Set up popover presentation style
         modalPresentationStyle = .popover

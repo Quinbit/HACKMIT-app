@@ -9,6 +9,10 @@ import UIKit
 import SceneKit
 import ARKit
 
+struct SavedPoints {
+    static var points: [float3] = []
+}
+
 class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UIDocumentPickerDelegate {
     
     static let appStateChangedNotification = Notification.Name("ApplicationStateChanged")
