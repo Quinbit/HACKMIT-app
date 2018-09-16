@@ -376,7 +376,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
     func startMaxScanTimeTimer() {
         guard maxScanTimeTimer == nil else { return }
         
-        let timeout: TimeInterval = 60.0 * 5
+        let timeout: TimeInterval = 60.0 * 10
         
         maxScanTimeTimer = Timer.scheduledTimer(withTimeInterval: timeout, repeats: false) { _ in
             self.cancelMaxScanTimeTimer()

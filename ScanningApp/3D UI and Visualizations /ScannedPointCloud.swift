@@ -87,7 +87,6 @@ class ScannedPointCloud: SCNNode, PointCloud {
     
     func update(with pointCloud: ARPointCloud) {
         self.currentFramePoints = pointCloud.points
-        SavedPoints.points = self.currentFramePoints   
     }
     
     func updateOnEveryFrame() {
@@ -110,6 +109,7 @@ class ScannedPointCloud: SCNNode, PointCloud {
         //       may no longer be inside of the box.
         renderedPoints = referenceObjectPoints.filter { boundingBox.contains($0) }
         renderedPreliminaryPoints = currentFramePoints.filter { boundingBox.contains($0) }
+        SavedPoints.points = renderedPoints
         
         self.pointNode.geometry = createVisualization(for: renderedPoints, color: .appYellow, size: 12)
         self.preliminaryPointsNode.geometry = createVisualization(for: renderedPreliminaryPoints, color: .appLightYellow, size: 12)
